@@ -1,1 +1,5 @@
 name: colinramsay.co.uk
+plugins:
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-redirect-from
