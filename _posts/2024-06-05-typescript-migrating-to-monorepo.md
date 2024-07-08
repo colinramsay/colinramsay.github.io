@@ -34,6 +34,40 @@ done
 
 ```
 
+- amend tsconfig.json
+
+copy from packages/web to root, remove:
+
+    "baseUrl": ".",
+
+    "paths"
+
+```
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./app/*"]
+    }
+  }
+}
+
+```
+
+Add references in root tsconfig.json:
+
+```
+
+
+
+  "references": [
+    { "path": "./packages/common" }
+  ]
+
+```
+
+
 References & inspiration:
 
 * https://medium.com/edgybees-blog/how-to-move-from-an-existing-repository-to-a-monorepo-using-npm-7-workspaces-27012a100269
