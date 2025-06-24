@@ -203,6 +203,10 @@ img.alignright {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.cr-mail:before {
+   content: "\f0e0";
+}
+
 .cr-twitter:before {
   content: "\f099";
 }
