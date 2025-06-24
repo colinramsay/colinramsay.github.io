@@ -179,12 +179,12 @@ img.alignright {
 
 
 @font-face {
-  font-family: 'crweb';
-  src:url('fonts/crweb.eot?vqmu3w');
-  src:url('fonts/crweb.eot?#iefixvqmu3w') format('embedded-opentype'),
-    url('fonts/crweb.woff?vqmu3w') format('woff'),
-    url('fonts/crweb.ttf?vqmu3w') format('truetype'),
-    url('fonts/crweb.svg?vqmu3w#crweb') format('svg');
+  font-family: 'fontello';
+  src:url('fonts/fontello.eot?vqmu3w');
+  src:url('fonts/fontello.eot?#iefixvqmu3w') format('embedded-opentype'),
+    url('fonts/fontello.woff?vqmu3w') format('woff'),
+    url('fonts/fontello.ttf?vqmu3w') format('truetype'),
+    url('fonts/fontello.svg?vqmu3w#crweb') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -204,17 +204,13 @@ img.alignright {
 }
 
 .cr-mail:before {
-   content: "\f0e0";
-}
-
-.cr-twitter:before {
-  content: "\f099";
+   content: "\F0E0";
 }
 .cr-rss:before {
-  content: "\f09e";
+  content: "\F09E";
 }
 .cr-github:before {
-  content: "\f113";
+  content: "\F09B";
 }
 .cr-rocket:before {
   content: "\f135";
