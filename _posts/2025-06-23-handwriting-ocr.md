@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Capturing my handwriting in a searchable digital format
-published: false
+title: Capturing my handwriting in a searchable digital format - the long way round
+published: true
 ---
 
 # Why handwriting?
@@ -31,10 +31,16 @@ Let's break this down.
 - I want good quality OCR
 - I want to import my notes into Obsidian
 
-# The solution, and yes, it involves AI
+# The (first) solution, and yes, it involves AI
 
 [Claude](https://claude.ai/) will convert text in any image into Markdown with really great accuracy, so I knew I wanted to involve that. For Obsidian, given that it doesn't have an API since it's local-first, I needed to make a plugin to pull down that Markdown from somewhere and insert it into my Obsidian vault.
 
 So, I created a Rust webservice that you can POST an image to, and then that sends it to Claude's API for OCR. The result is pushed into a database. The Obsidian plugin will check a second endpoint on the API and create a new file with that content. When it pulls the content, the API marks it as downloaded so it doesn't get pulled down again. The plugin also calls the endpoint on a schedule so it can stay up to date.
 
-And yes, this was an experiment with [Claude Code](https://www.anthropic.com/claude-code). This is clunky but remarkably effective, with it churning out the Obsidian plugin without requiring much bullying. The Rust API required a little more back-and-forth. I have no plans to publish this for other people to use, but I have [published the code](here).
+And yes, this was an experiment with [Claude Code](https://www.anthropic.com/claude-code). This is clunky but remarkably effective, with it churning out the Obsidian plugin without requiring much bullying. The Rust API required a little more back-and-forth. I have no plans to publish this for other people to use, but I have published the cod-
+
+# BUT WAIT
+
+After I wrote the draft of this post, I sat myself down and gave myself a strong talking to. This seemed so convoluted, _and_ it was restricted to Obsidian, when all I really wanted was a better version of Apple's Live Text. So, I spent 45 minutes doing exactly that with iOS's Shortcuts app, which uses `Get Contents Of URL` to make a request to the Claude API and then the `Dictionary` features to parse the response and pass it for sharing to another app. This _is better_, and while the Shortcuts app is clunky I never have to touch it again. 
+
+I suppose there are two lessons here: the one I learned when using Claude Code to experiment, and the one I'll hopefully learn in future (and should have already learned in the past): go for the simple(r) tools.
